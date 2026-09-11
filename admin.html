@@ -1,0 +1,35 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Okaystyledu Owner Dashboard</title><link rel="stylesheet" href="styles.css"></head>
+<body class="adminbody"><main class="admin"><div class="adminhead"><div><div class="eyebrow">Okaystyledu</div><h1 style="margin:.2em 0">Owner Dashboard</h1><div class="status" id="status">Edit your site content below.</div></div><a class="preview" href="index.html" target="_blank">Preview Website ↗</a></div>
+<div class="notice"><strong>How this works:</strong> edit, save a draft on this device, then export the updated content file. The live client site will not change until the updated files are deployed to Netlify.</div>
+<div class="adminnav"><button class="tab" data-tab="business">Business</button><button class="tab" data-tab="services">Services</button><button class="tab" data-tab="gallery">Gallery</button><button class="tab" data-tab="policies">Policies</button><button class="tab" data-tab="booking">Booking</button></div>
+<section class="panel active" id="panel-business"><h2>Business information</h2><div class="editor editgrid">
+<div><label>Business name<input id="businessName"></label></div><div><label>Tagline<input id="tagline"></label></div><div><label>Phone<input id="phone"></label></div><div><label>Email<input id="email"></label></div><div><label>Instagram<input id="instagram"></label></div><div><label>CEO Instagram<input id="ceoInstagram"></label></div><div><label>CEO Email<input id="ceoEmail"></label></div><div><label>Location / service area<input id="location"></label></div><div class="full"><label>About title<input id="bioTitle"></label></div><div class="full"><label>About / bio<textarea id="bio"></textarea></label></div></div>
+<h3>Hours</h3><div id="hoursEditor" class="editor"></div></section>
+<section class="panel" id="panel-services"><h2>Services & prices</h2><div id="servicesEditor" class="editor"></div></section>
+<section class="panel" id="panel-gallery"><h2>Gallery</h2><p class="muted">The included reference photos are kept unchanged. You can edit the labels/order here.</p><div id="galleryEditor" class="editor"></div></section>
+<section class="panel" id="panel-policies"><h2>Policies</h2><div id="policiesEditor" class="editor"></div></section>
+<section class="panel" id="panel-booking"><h2>Booking</h2><p>Booking requests are collected by the Netlify form named <strong>okaystyledu-booking</strong>.</p><p>After deployment, booking submissions can be reviewed in Netlify. You can also configure email notifications there.</p><div class="notice">For security, this dashboard does not ask you to enter Netlify passwords, API tokens, or payment information.</div></section>
+<div class="sticky-save"><button class="btn" id="save">Save Draft</button><button class="btn pink" id="export">Export Updated Content</button></div></main>
+<script>
+let c;
+const $=id=>document.getElementById(id);
+const esc=s=>String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]));
+async function init(){const local=localStorage.getItem('okaystyleduDraft'); if(local){c=JSON.parse(local)}else{c=await (await fetch('content.json')).json()} bind(); renderEditors()}
+function bind(){document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>{document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));$('panel-'+b.dataset.tab).classList.add('active')});$('save').onclick=save;$('export').onclick=exportContent}
+function renderEditors(){
+['businessName','tagline','phone','email','instagram','ceoInstagram','ceoEmail','location','bioTitle','bio'].forEach(id=>$(id).value=c[id]||'');
+$('hoursEditor').innerHTML=c.hours.map((h,i)=>`<div class="row"><input data-h="day" data-i="${i}" value="${esc(h[0])}"><input data-h="time" data-i="${i}" value="${esc(h[1])}"></div>`).join('');
+$('servicesEditor').innerHTML=c.services.map((s,i)=>`<div class="row" style="display:grid;grid-template-columns:1fr 100px 1fr;gap:10px"><input data-s="name" data-i="${i}" value="${esc(s.name)}"><input data-s="price" data-i="${i}" value="${esc(s.price)}"><input data-s="description" data-i="${i}" value="${esc(s.description)}"></div>`).join('');
+$('galleryEditor').innerHTML=c.gallery.map((g,i)=>`<div class="row"><span>${esc(g.image)}</span><input data-g="label" data-i="${i}" value="${esc(g.label)}"></div>`).join('');
+$('policiesEditor').innerHTML=c.policies.map((p,i)=>`<div class="row" style="display:grid;grid-template-columns:180px 1fr;gap:10px"><input data-p="title" data-i="${i}" value="${esc(p[0])}"><textarea data-p="body" data-i="${i}">${esc(p[1])}</textarea></div>`).join('');
+}
+function collect(){['businessName','tagline','phone','email','instagram','ceoInstagram','ceoEmail','location','bioTitle','bio'].forEach(id=>c[id]=$(id).value);
+document.querySelectorAll('[data-h]').forEach(x=>c.hours[x.dataset.i][x.dataset.h==='day'?0:1]=x.value);
+document.querySelectorAll('[data-s]').forEach(x=>c.services[x.dataset.i][x.dataset.s]=x.value);
+document.querySelectorAll('[data-g]').forEach(x=>c.gallery[x.dataset.i].label=x.value);
+document.querySelectorAll('[data-p]').forEach(x=>c.policies[x.dataset.i][x.dataset.p==='title'?0:1]=x.value);
+}
+function save(){collect();localStorage.setItem('okaystyleduDraft',JSON.stringify(c));$('status').textContent='Draft saved on this device ✓';}
+function exportContent(){collect();const blob=new Blob([JSON.stringify(c,null,2)],{type:'application/json'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='content.json';a.click();URL.revokeObjectURL(a.href);$('status').textContent='Updated content exported ✓';}
+init();
+</script></body></html>

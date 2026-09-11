@@ -1,0 +1,126 @@
+{
+  "businessName": "Okaystyledu",
+  "tagline": "Luxury hair, made for you.",
+  "bioTitle": "Meet Kayla \u2014 KK",
+  "bio": "Hi, I\u2019m Kayla, also known as KK or Kay, and I\u2019m the heart behind Okaystyledu. I\u2019m incredibly passionate about what I do and deeply grateful for the opportunity and talent I\u2019ve been blessed with. I truly love serving my clients and providing quality hair-care services that leave you feeling confident, beautiful, and cared for. When I\u2019m not behind the chair, I enjoy reading, fashion, fitness, discovering new hobbies, and continuously perfecting my craft. I believe there\u2019s always something new to learn, create, and improve. Thank you for trusting me with your crown. \ud83e\udd0d",
+  "phone": "410-320-9065",
+  "email": "okaystyledu@gmail.com",
+  "instagram": "@oKaystyledu",
+  "ceoInstagram": "@kayykissss",
+  "ceoEmail": "moore4kayla@gmail.com",
+  "location": "Columbia / Baltimore, Maryland",
+  "hours": [
+    [
+      "Monday",
+      "2:00 PM \u2013 12:00 AM"
+    ],
+    [
+      "Tuesday",
+      "2:00 PM \u2013 12:00 AM"
+    ],
+    [
+      "Wednesday",
+      "2:00 PM \u2013 12:00 AM"
+    ],
+    [
+      "Thursday",
+      "2:00 PM \u2013 12:00 AM"
+    ],
+    [
+      "Friday",
+      "2:00 PM \u2013 12:00 AM"
+    ],
+    [
+      "Saturday",
+      "Closed"
+    ],
+    [
+      "Sunday",
+      "Closed"
+    ]
+  ],
+  "services": [
+    {
+      "name": "Quick Weaves",
+      "price": "$90+",
+      "image": "images/quick-weave-1.jpeg",
+      "description": "Polished, versatile quick-weave styles."
+    },
+    {
+      "name": "Sew-Ins",
+      "price": "$100+",
+      "image": "images/sew-in-1.jpeg",
+      "description": "Secure, beautiful sew-in installs tailored to your look."
+    },
+    {
+      "name": "Knotless Braids",
+      "price": "$100+",
+      "image": "images/knotless-1.jpeg",
+      "description": "Neat, lightweight knotless braid styles."
+    }
+  ],
+  "gallery": [
+    {
+      "image": "images/knotless-1.jpeg",
+      "label": "Knotless Braids"
+    },
+    {
+      "image": "images/knotless-2.jpeg",
+      "label": "Knotless Braids"
+    },
+    {
+      "image": "images/quick-weave-1.jpeg",
+      "label": "Quick Weave"
+    },
+    {
+      "image": "images/quick-weave-2.jpeg",
+      "label": "Quick Weave"
+    },
+    {
+      "image": "images/quick-weave-3.jpeg",
+      "label": "Quick Weave"
+    },
+    {
+      "image": "images/sew-in-1.jpeg",
+      "label": "Sew-In"
+    },
+    {
+      "image": "images/sew-in-2.jpeg",
+      "label": "Sew-In"
+    }
+  ],
+  "policies": [
+    [
+      "Pre-Appointment",
+      "Please arrive with hair washed, blow-dried, and free of product unless your selected service includes a wash. Contact the CEO with any questions before your appointment."
+    ],
+    [
+      "Payment",
+      "Cash, Apple Pay, Cash App, Zelle, PayPal, and other accepted payment methods are available. No checks. Remaining balance must be paid in full before leaving."
+    ],
+    [
+      "Health & Safety",
+      "Please reschedule if you are feeling unwell. Sanitation and hygiene protocols are followed, and additional safety procedures may apply when needed."
+    ],
+    [
+      "Refunds",
+      "Deposits are final and non-refundable. Refunds are considered only for service errors or cancellations by the provider/CEO. Service concerns should be reported within 24 hours."
+    ],
+    [
+      "Cancellations",
+      "Please cancel at least 24 hours in advance. No-shows and same-day cancellations forfeit the deposit. Repeated no-shows may be blocked from booking."
+    ],
+    [
+      "Day of Appointment",
+      "Arrive at least 10 minutes early. A 10\u201315 minute grace period applies for late arrivals; after the grace period, the appointment may be cancelled or a late fee may apply. Exact address is provided after booking confirmation. Please respect home/personal space."
+    ],
+    [
+      "Guests & Children",
+      "No extra guests unless approved. No children unless they are receiving a service."
+    ],
+    [
+      "Photos & Content",
+      "Photos/videos of finished styles may be taken for business promotion. Client participation can be treated as optional."
+    ]
+  ]
+}
