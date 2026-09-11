@@ -43,49 +43,49 @@
     {
       "name": "Quick Weaves",
       "price": "$90+",
-      "image": "images/quick-weave-1.jpeg",
+      "image": "images/IMG_7993.png",
       "description": "Polished, versatile quick-weave styles."
     },
     {
       "name": "Sew-Ins",
       "price": "$100+",
-      "image": "images/sew-in-1.jpeg",
+      "image": "images/View recent photos.png",
       "description": "Secure, beautiful sew-in installs tailored to your look."
     },
     {
       "name": "Knotless Braids",
       "price": "$100+",
-      "image": "images/knotless-1.jpeg",
+      "image": "images/IMG_2822.jpeg",
       "description": "Neat, lightweight knotless braid styles."
     }
   ],
   "gallery": [
     {
-      "image": "images/knotless-1.jpeg",
+      "image": "images/IMG_2822.jpeg",
       "label": "Knotless Braids"
     },
     {
-      "image": "images/knotless-2.jpeg",
+      "image":"images/IMG_2132.png", 
       "label": "Knotless Braids"
     },
     {
-      "image": "images/quick-weave-1.jpeg",
+      "image": "images/IMG_7993.png",
       "label": "Quick Weave"
     },
     {
-      "image": "images/quick-weave-2.jpeg",
+      "image": "images/IMG_7993.png",
       "label": "Quick Weave"
     },
     {
-      "image": "images/quick-weave-3.jpeg",
+      "image": "images/IMG_7993.png",
       "label": "Quick Weave"
     },
     {
-      "image": "images/sew-in-1.jpeg",
+      "image": "images/View recent photos.png",
       "label": "Sew-In"
     },
     {
-      "image": "images/sew-in-2.jpeg",
+      "image": "images/View recent photos 2.png",
       "label": "Sew-In"
     }
   ],
